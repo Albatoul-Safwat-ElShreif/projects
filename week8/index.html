@@ -1,1 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The student score report</title>
+</head>
+<body>
+    
+    <script>
+        let fristName='Albatoul';
+        let lastName='Safwat';
+        let course='CSS';
 
+        let quizOne=70;
+        let quizTwo=90;
+        let quizThree=80;
+
+
+        let fullName=`${fristName.trim()} ${lastName.trim()}`;
+        let totalScore=quizOne+quizTwo+quizThree;
+        let avrageScore=Math.round(totalScore/3);
+
+        let highScore=Math.max(quizOne,quizTwo,quizThree);
+        let lowScore=Math.min(quizOne,quizTwo,quizThree);
+
+        
+        console.log(`
+        name: ${fullName}
+        course: ${course}
+
+        scores: ${quizOne},${quizTwo},${quizThree}
+        total score: ${totalScore}
+        avrage score: ${avrageScore}
+
+        high scor: ${highScore}
+        low score: ${lowScore}
+        
+        passing case: ${avrageScore>=60}
+        all score valid case: ${quizOne <= 100 && quizTwo <= 100 && quizThree <= 100}
+
+        date: ${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()}
+        `)
+
+    </script>
+</body>
+</html>
