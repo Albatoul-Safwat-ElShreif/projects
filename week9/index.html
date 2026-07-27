@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Ticket System</title>
+</head>
+<body>
+    
+    <script>
+        let name = prompt('What is your Name?');
+        let age = prompt('What is your age?')
+        let movieType = prompt("Choose movie (Action / Comedy / Horror)").toLowerCase();
+        let seat = prompt("Choose seat number");
+
+        let ticketType;
+        if (age >= 18) {
+            ticketType = "Adult Ticket";
+        }
+        else if (age >= 13) {
+            ticketType = "Teen Ticket";
+        }
+        else {
+            ticketType = "Child Ticket";
+        }
+        
+        
+        switch (movieType) {
+            case "action":
+                console.log("Action Movie Selected");
+                break;
+            case "comedy":
+                console.log("Comedy Movie Selected");
+                break;
+            case "horror":
+                console.log("Horror Movie Selected (18+)");
+                break;
+            default:
+                console.log("Invalid Movie Type");
+        } 
+
+        if (seat) {
+            console.log("Seat Booked:", seat);
+            }
+        else {
+            console.log("No Seat Selected");
+        } 
+
+        let access;
+        if (movieType === "Horror" && age < 18) {
+        access = "Not Allowed";
+        } else {
+        access = "Allowed";
+        } 
+        console.log("===== CINEMA SYSTEM =====");
+        console.log("Name:", name); console.log("Age:", age);
+        console.log("Ticket Type:", ticketType);
+        console.log("Movie:", movieType);
+        console.log("Seat:", seat);
+        console.log("Access:", access);
+        console.log("Booking Time:", new Date());  
+    </script>
+</body>
+</html>
